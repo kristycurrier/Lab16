@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,37 @@ namespace Lab16
                 else
                 {
                     validCountry = true;
+                }
+            }
+            return country;
+        }
+
+        public static string CountryInList(string file)
+        {
+            string country = "";
+
+            bool CountryInList = false;
+            while (CountryInList == false)
+            {
+                Console.Write("Enter country: ");
+                country = CountryChoice();
+                using (var reader = new StreamReader(file))
+                {
+                    string line;
+                    do
+                    {
+                        line = reader.ReadLine();
+                        if (country == line)
+                        {
+                            CountryInList = true;
+                            break;
+                        }
+                    } while (line != null && CountryInList == false);
+
+                    if (CountryInList == false)
+                    {
+                    Console.WriteLine("Sorry, that country isn't in the list!");
+                    }
                 }
             }
             return country;

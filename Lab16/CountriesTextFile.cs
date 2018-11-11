@@ -43,6 +43,8 @@ namespace Lab16
 
         public static void DeleteCountry(string file, string countryToDelete)
         {
+
+
             var listOfCountries = System.IO.File.ReadAllLines(file);
             var newListOfCountries = listOfCountries.Where(line => !line.Contains(countryToDelete));
             System.IO.File.WriteAllLines(file, newListOfCountries);
