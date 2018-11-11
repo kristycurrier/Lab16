@@ -33,6 +33,14 @@ namespace Lab16
                 }
                 else if (choice == 3)
                 {
+                    string country = "";
+                    Console.Write("Enter country: ");
+                    country = Validator.CountryChoice();
+                    CountriesTextFile.DeleteCountry(directoryPath, country);
+                    Console.WriteLine("Country deleted!");
+                }
+                else if (choice == 4)
+                {
                     Console.WriteLine("Goodbye!");
                     keepGoing = false;
                 }

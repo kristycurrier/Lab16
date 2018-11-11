@@ -17,7 +17,8 @@ namespace Lab16
             {
                 Console.WriteLine("1 - See list of countries");
                 Console.WriteLine("2 - Add a country");
-                Console.WriteLine("3 - Exit");
+                Console.WriteLine("3 - Delete a country");
+                Console.WriteLine("4 - Exit");
                 Console.Write("\nEnter menu number: ");
                 validChoice = int.TryParse(Console.ReadLine(), out userChoice);
                 if (validChoice == true)
