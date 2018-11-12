@@ -43,16 +43,16 @@ namespace Lab16
 
         public static void DeleteCountry(string file, string countryToDelete)
         {
-            var listOfCountries = System.IO.File.ReadAllLines(file);
+            var listOfCountries = File.ReadAllLines(file);
             var newListOfCountries = listOfCountries.Where(line => !line.Contains(countryToDelete));
-            System.IO.File.WriteAllLines(file, newListOfCountries);
+            File.WriteAllLines(file, newListOfCountries);
         }
 
         public static void SortByAlphabeticalOrder(string file)
         {
-            var listOfCountries = System.IO.File.ReadAllLines(file);
+            var listOfCountries = File.ReadAllLines(file);
             var newListOfCountries = listOfCountries.OrderBy(x => x).ToList();
-            System.IO.File.WriteAllLines(file, newListOfCountries);
+            File.WriteAllLines(file, newListOfCountries);
         }
     }
 }
