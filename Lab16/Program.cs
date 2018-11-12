@@ -18,6 +18,7 @@ namespace Lab16
             while (keepGoing)
             {
                 int choice = CountriesApp.GetUserChoice();
+                CountriesTextFile.SortByAlphabeticalOrder(directoryPath);
 
                 if (choice == 1)
                 {
@@ -30,6 +31,8 @@ namespace Lab16
                     country = Validator.CountryChoice();
                     Console.WriteLine("The country has been saved!");
                     CountriesTextFile.WriteCountries(directoryPath, country);
+                    CountriesTextFile.SortByAlphabeticalOrder(directoryPath);
+
                 }
                 else if (choice == 3)
                 {
