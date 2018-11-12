@@ -11,7 +11,8 @@ namespace Lab16
     {
         public static string CheckCountriesTextFile()
         {
-            var directoryPath = @"C:\Users\krist\source\repos\Lab16\Lab16\CountriesFile.txt";
+            /********Is there a way to automatically create the file in the folder that this exists in instead of an exact path?****/
+            var directoryPath = @"C:\Users\krist\source\repos\Lab16\Lab16\CountriesFile.txt"; 
             if (File.Exists(directoryPath) == false)
             {
                 new StreamWriter(directoryPath);
