@@ -9,7 +9,6 @@ namespace Lab16
 {
     class CountriesTextFile
     {
-
         public static string CheckCountriesTextFile()
         {
             var directoryPath = @"C:\Users\krist\source\repos\Lab16\Lab16\CountriesFile.txt";
@@ -17,6 +16,7 @@ namespace Lab16
             {
                 new StreamWriter(directoryPath);
             }
+            SortByAlphabeticalOrder(directoryPath);
             return directoryPath;
         }
 
@@ -39,6 +39,7 @@ namespace Lab16
             {
                 writer.WriteLine(countryToWrite);            
             }
+            SortByAlphabeticalOrder(file);
         }
 
         public static void DeleteCountry(string file, string countryToDelete)
@@ -48,7 +49,7 @@ namespace Lab16
             File.WriteAllLines(file, newListOfCountries);
         }
 
-        public static void SortByAlphabeticalOrder(string file)
+        private static void SortByAlphabeticalOrder(string file)
         {
             var listOfCountries = File.ReadAllLines(file);
             var newListOfCountries = listOfCountries.OrderBy(x => x).ToList();
